@@ -21,7 +21,7 @@ const config_service_1 = require("./services/config.service");
 // Load environment variables
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 3001;
+const PORT = Number(process.env.PORT) || 3001;
 // Middleware
 app.use((0, helmet_1.default)()); // Security headers
 // CORS - In development, localhost is always allowed.
@@ -88,7 +88,7 @@ app.use((req, res) => {
 // Error handler (must be last)
 app.use(error_middleware_1.errorHandler);
 // Start server
-app.listen(PORT, async () => {
+app.listen(PORT, '::', async () => {
     console.log(`🚀 Server running on port ${PORT}`);
     console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);
     console.log(`🔗 API: http://localhost:${PORT}/api`);
