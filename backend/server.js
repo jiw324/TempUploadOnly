@@ -77,7 +77,7 @@ app.use('/api/settings', settings_routes_1.default);
 app.use('/api/conversations', conversation_routes_1.default);
 app.use('/api/tasks', task_routes_1.default);
 app.use('/api/litellm', litellm_routes_1.default);
-app.use('/api/admin', admin_routes_1.default);
+app.use('/api/panel', admin_routes_1.default);
 // 404 handler
 app.use((req, res) => {
     res.status(404).json({
